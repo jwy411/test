@@ -1,5 +1,6 @@
 /**
- * 목표
+ * 커링 함수
+ * : 함수의 전달인자 몇 개를 미리 채움으로써 더 간단한 함수를 만드는 방법
  *
  function volume( l, w, h ) {
         return l * w * h;
@@ -13,7 +14,6 @@
     function curry(fn) {
         var arity = fn.length;
         return (function resolver() {
-            // arguments 는 resolver의 인자?
             var memory = Array.prototype.slice.call(arguments);
             var next;
             return function () {
